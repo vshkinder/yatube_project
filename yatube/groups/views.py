@@ -1,5 +1,10 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def group_posts(request, slug):
-    return HttpResponse('Страница, на которой будут посты, отфильтрованные по группам.')
+    template = 'posts/group_list.html'
+    title = 'Здесь будет информация о группах проекта Yatube'
+    context = {
+        'title': title
+    }
+    return render(request, template, context)
